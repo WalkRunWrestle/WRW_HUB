@@ -13,14 +13,8 @@
     }
 
     :root{
-      --bg:#0d0d0f;
-      --panel:#17181c;
-      --panel-border:rgba(255,255,255,.08);
       --text:#ffffff;
       --muted:rgba(255,255,255,.72);
-
-      --wrw-green:#048d64;
-      --wrw-green-dark:#036c4b;
 
       --rattle-green-1:#048d64;
       --rattle-green-2:#06a879;
@@ -35,21 +29,14 @@
     }
 
     @keyframes warriorGlow{
-      0%{
-        box-shadow:
-          0 14px 30px rgba(53,88,255,.22),
-          0 0 24px rgba(255,39,214,.16);
-      }
-      50%{
-        box-shadow:
-          0 18px 36px rgba(53,88,255,.28),
-          0 0 32px rgba(255,39,214,.24);
-      }
-      100%{
-        box-shadow:
-          0 14px 30px rgba(53,88,255,.22),
-          0 0 24px rgba(255,39,214,.16);
-      }
+      0%{box-shadow:0 16px 34px rgba(53,88,255,.28),0 0 26px rgba(255,39,214,.18);}
+      50%{box-shadow:0 22px 44px rgba(53,88,255,.36),0 0 42px rgba(255,39,214,.28);}
+      100%{box-shadow:0 16px 34px rgba(53,88,255,.28),0 0 26px rgba(255,39,214,.18);}
+    }
+
+    @keyframes shine{
+      0%{transform:translateX(-120%)}
+      100%{transform:translateX(140%)}
     }
 
     body{
@@ -57,13 +44,10 @@
       display:flex;
       flex-direction:column;
       align-items:center;
-      justify-content:flex-start;
-      padding:24px 16px 20px;
+      padding:24px 16px;
       color:var(--text);
       background:
         radial-gradient(700px 320px at 50% 0%, rgba(4,141,100,.18), transparent 60%),
-        radial-gradient(500px 260px at 8% 100%, rgba(255,255,255,.04), transparent 60%),
-        radial-gradient(500px 260px at 92% 16%, rgba(255,255,255,.03), transparent 60%),
         linear-gradient(180deg, #111, #080808);
     }
 
@@ -75,7 +59,6 @@
 
     .logo{
       max-width:250px;
-      width:100%;
       margin:24px auto 14px;
       display:block;
       filter:drop-shadow(0 0 24px rgba(4,141,100,.22));
@@ -84,215 +67,158 @@
     h1{
       font-size:2rem;
       font-weight:900;
-      letter-spacing:.4px;
       margin-bottom:8px;
       text-transform:uppercase;
     }
 
     .subtext{
       color:var(--muted);
-      font-size:.98rem;
-      line-height:1.45;
-      margin-bottom:12px;
+      font-size:.95rem;
+      line-height:1.5;
+      margin-bottom:16px;
     }
 
-    .site-link-text{
-      display:block;
-      margin-bottom:18px;
-      font-size:.9rem;
-      color:rgba(255,255,255,.7);
+    /* 🔥 WEBSITE BUTTON (IMPROVED) */
+    .site-button{
+      display:inline-block;
+      margin-bottom:22px;
+      padding:12px 18px;
+      border-radius:999px;
       text-decoration:none;
-      font-weight:600;
-      transition:color .2s ease;
+      color:#fff;
+      font-weight:800;
+      font-size:.9rem;
+      background:linear-gradient(135deg, #1f1f25, #141418);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 10px 24px rgba(0,0,0,.35);
+      transition:.2s;
     }
 
-    .site-link-text:hover{
-      color:#fff;
+    .site-button:hover{
+      transform:translateY(-2px);
+      background:#1b1b20;
     }
 
     .hub-panel{
       background:rgba(255,255,255,.03);
-      border:1px solid var(--panel-border);
+      border:1px solid rgba(255,255,255,.08);
       border-radius:22px;
       padding:16px;
       box-shadow:0 16px 40px rgba(0,0,0,.35);
-      backdrop-filter:blur(2px);
       text-align:left;
     }
 
     .section-label{
-      font-size:.78rem;
+      font-size:.75rem;
       text-transform:uppercase;
-      letter-spacing:1.2px;
       color:#8e8e8e;
-      margin-top:6px;
       margin-bottom:10px;
       font-weight:700;
     }
 
-    .section-label:first-of-type{
-      margin-top:0;
-    }
-
     .run-button{
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start;
-      justify-content:center;
-      width:100%;
-      min-height:86px;
-      padding:16px 18px;
+      display:block;
+      padding:16px;
       margin:8px 0;
-      text-align:left;
-      text-decoration:none;
       border-radius:16px;
-      font-weight:bold;
-      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+      text-decoration:none;
+      transition:.2s;
       border:2px solid transparent;
     }
 
-    .run-button:hover{
-      transform:translateY(-2px);
-    }
-
     .run-title{
-      font-size:1.08rem;
       font-weight:900;
-      letter-spacing:.4px;
+      font-size:1.05rem;
     }
 
     .run-meta{
+      font-size:.75rem;
       margin-top:5px;
-      font-size:.78rem;
-      font-weight:700;
-      opacity:.92;
-      letter-spacing:.8px;
+      opacity:.85;
       text-transform:uppercase;
+      font-weight:700;
     }
 
     .run-help{
+      font-size:.8rem;
       margin-top:5px;
-      font-size:.82rem;
-      line-height:1.35;
-      color:rgba(255,255,255,.88);
+      opacity:.85;
     }
 
+    /* RATTLESNAKE */
     .rattlesnake{
       background:linear-gradient(135deg, var(--rattle-green-1), var(--rattle-green-2));
-      color:#fff;
-      border-color:var(--rattle-green-2);
-      box-shadow:
-        0 12px 26px rgba(4,141,100,.24),
-        0 0 20px rgba(4,141,100,.14);
+      box-shadow:0 12px 26px rgba(4,141,100,.25);
     }
 
-    .rattlesnake:hover{
-      background:linear-gradient(135deg, #059a6f, #08b885);
-      border-color:#08b885;
-      box-shadow:
-        0 14px 30px rgba(4,141,100,.30),
-        0 0 24px rgba(4,141,100,.18);
-    }
-
+    /* 🔥 WARRIOR (UPGRADED HARD) */
     .warrior{
       background:linear-gradient(135deg, var(--warrior-blue), var(--warrior-pink));
-      color:#fff;
-      border-color:rgba(255,255,255,.08);
-      box-shadow:
-        0 14px 30px rgba(53,88,255,.22),
-        0 0 24px rgba(255,39,214,.16);
       position:relative;
       overflow:hidden;
-      animation:warriorGlow 2.5s ease-in-out infinite;
+      transform:scale(1.02);
+      animation:warriorGlow 2.5s infinite;
     }
 
-    .warrior::after{
+    .warrior::before{
       content:"";
       position:absolute;
-      inset:auto -20% -30% auto;
-      width:180px;
-      height:180px;
-      background:radial-gradient(circle, rgba(255,230,0,.22), transparent 65%);
-      pointer-events:none;
+      top:0;
+      left:-100%;
+      width:60%;
+      height:100%;
+      background:linear-gradient(120deg, transparent, rgba(255,255,255,.25), transparent);
+      animation:shine 3s infinite;
     }
 
     .warrior:hover{
-      filter:brightness(1.03);
+      transform:scale(1.04);
     }
 
     .coming-soon{
       background:linear-gradient(180deg, var(--coming-bg), #1d1d22);
       color:var(--coming-text);
       border:2px solid var(--coming-border);
-      opacity:.92;
-      cursor:default;
-    }
-
-    .coming-soon:hover{
-      transform:none;
-    }
-
-    .coming-soon .run-help{
-      color:#8f8f98;
     }
 
     .trust-line{
       margin-top:14px;
       font-size:.85rem;
       color:#7a7a7a;
-      text-align:center;
     }
 
     .hub-help{
-      margin-top:22px;
-      font-size:.92rem;
+      margin-top:20px;
+      font-size:.9rem;
       color:#8f8f98;
-      line-height:1.45;
-      text-align:center;
     }
 
     .hub-help a{
-      color:#ffffff;
-      text-decoration:none;
+      color:#fff;
       font-weight:700;
+      text-decoration:none;
     }
 
     footer{
       margin-top:12px;
-      padding:16px 0 6px;
-      font-size:.88rem;
+      font-size:.85rem;
       color:#666;
-      text-align:center;
-    }
-
-    @media (max-width:480px){
-      h1{
-        font-size:1.7rem;
-      }
-
-      .subtext{
-        font-size:.92rem;
-      }
-
-      .run-title{
-        font-size:1rem;
-      }
     }
   </style>
 </head>
 <body>
 
   <div class="wrap">
-    <img src="Logo wrw1.png" alt="WRW Logo" class="logo">
+    <img src="Logo wrw1.png" class="logo">
 
     <h1>Choose Your Tracker</h1>
     <p class="subtext">
-      Select the run you purchased below to open your tracker.<br>
+      Select the run you purchased below.<br>
       Only choose the run you’ve paid for.
     </p>
 
-    <a href="https://www.walkrunwrestle.com" class="site-link-text" target="_blank" rel="noopener noreferrer">
-      ← walkrunwrestle.com
+    <a href="https://www.walkrunwrestle.com" class="site-button">
+      Visit WalkRunWrestle.com
     </a>
 
     <div class="hub-panel">
@@ -301,13 +227,13 @@
       <a href="https://walkrunwrestle.github.io/Rattlesnakev2/" class="run-button rattlesnake">
         <div class="run-title">THE RATTLESNAKE 10K</div>
         <div class="run-meta">Live Now</div>
-        <div class="run-help">Open your Rattlesnake tracker and continue your progress.</div>
+        <div class="run-help">Continue your Rattlesnake progress.</div>
       </a>
 
       <a href="https://walkrunwrestle.github.io/Warriorv2/" class="run-button warrior">
         <div class="run-title">THE WARRIOR 21K</div>
-        <div class="run-meta">Live Now</div>
-        <div class="run-help">Open your Warrior tracker and continue your progress.</div>
+        <div class="run-meta">Main Event</div>
+        <div class="run-help">Step into The Warrior challenge.</div>
       </a>
 
       <div class="section-label" style="margin-top:18px;">Coming Soon</div>
@@ -315,19 +241,16 @@
       <div class="run-button coming-soon">
         <div class="run-title">LEGEND 3</div>
         <div class="run-meta">Coming Soon</div>
-        <div class="run-help">This challenge is not live yet.</div>
       </div>
 
       <div class="run-button coming-soon">
         <div class="run-title">LEGEND 4</div>
         <div class="run-meta">Coming Soon</div>
-        <div class="run-help">This challenge is not live yet.</div>
       </div>
 
       <div class="run-button coming-soon">
         <div class="run-title">LEGEND 5</div>
         <div class="run-meta">Coming Soon</div>
-        <div class="run-help">This challenge is not live yet.</div>
       </div>
     </div>
 
@@ -336,12 +259,12 @@
     </div>
 
     <div class="hub-help">
-      If you’ve forgotten your login, email us at
+      Forgot your login? Email us at
       <a href="mailto:Contact@walkrunwrestle.com">Contact@walkrunwrestle.com</a>
     </div>
 
     <footer>
-      &copy; 2026 Walk Run Wrestle. All Rights Reserved.
+      &copy; 2026 Walk Run Wrestle
     </footer>
   </div>
 
