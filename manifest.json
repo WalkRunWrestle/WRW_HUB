@@ -1,6 +1,6 @@
 {
   "name": "WRW Hub",
-  "short_name": "WRW",
+  "short_name": "WRW HUB",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
