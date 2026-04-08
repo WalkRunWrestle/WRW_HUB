@@ -5,7 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WRW Hub</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b0d0f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="WRW Hub">
+<link rel="apple-touch-icon" href="Logo wrw1.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
@@ -19,7 +28,7 @@ color:#fff;
 .wrap{
 max-width:520px;
 margin:auto;
-padding:24px 14px;
+padding:24px 14px 34px;
 }
 
 .logo{
@@ -55,7 +64,7 @@ gap:12px;
 margin-bottom:20px;
 }
 
-/* BUTTON */
+/* BUTTONS */
 .btn{
 display:block;
 width:100%;
@@ -64,15 +73,18 @@ border-radius:16px;
 text-align:center;
 font-weight:900;
 text-decoration:none;
+color:#fff;
 }
 
 .primary{
 background:linear-gradient(135deg,#048d64,#05b986);
+color:#fff;
 }
 
 .secondary{
 background:#1a1d22;
 border:1px solid rgba(255,255,255,.08);
+color:#fff;
 }
 
 /* PANEL */
@@ -244,11 +256,34 @@ align-items:center;
 justify-content:center;
 font-size:.8rem;
 font-weight:800;
+color:#fff;
 }
 
 .step-text{
 font-size:.9rem;
 color:#bbb;
+}
+
+/* IMPORTANT INFO */
+.info-list{
+display:grid;
+gap:10px;
+margin-top:16px;
+}
+
+.info-item{
+padding:12px 14px;
+border-radius:16px;
+background:linear-gradient(180deg,#171b1f,#111417);
+border:1px solid rgba(255,255,255,.08);
+font-size:.92rem;
+line-height:1.45;
+color:#b8bdc4;
+}
+
+.info-item strong{
+color:#fff;
+font-weight:800;
 }
 
 /* INSTALL */
@@ -276,12 +311,54 @@ margin-top:12px;
 display:block;
 }
 
-/* FOOTER */
+.help-line{
+text-align:center;
+font-size:.9rem;
+color:#7c848d;
+margin-top:8px;
+}
+
+.help-line a{
+color:#fff;
+text-decoration:none;
+font-weight:800;
+}
+
+.store-wrap{
+margin-top:18px;
+}
+
+.trust{
+text-align:center;
+font-size:.9rem;
+color:#7c848d;
+margin-top:18px;
+}
+
 footer{
 text-align:center;
 margin-top:20px;
 color:#666;
 font-size:.8rem;
+}
+
+@media (max-width:420px){
+.wrap{
+padding:18px 12px 28px;
+}
+
+.hero h1{
+font-size:1.72rem;
+}
+
+.run-title{
+font-size:1.28rem;
+max-width:65%;
+}
+
+.card-title{
+font-size:1.5rem;
+}
 }
 </style>
 </head>
@@ -290,7 +367,7 @@ font-size:.8rem;
 
 <div class="wrap">
 
-<img src="hublogo.png" class="logo">
+<img src="hublogo.png" class="logo" alt="Walk Run Wrestle Logo">
 
 <div class="hero">
 <div class="eyebrow">START YOUR CHALLENGE NOW</div>
@@ -373,6 +450,25 @@ font-size:.8rem;
 <a href="https://play.google.com/store/apps/details?id=com.strava" class="btn primary" style="margin-top:16px;">
 Download Strava
 </a>
+
+<div style="margin-top:16px; padding-top:12px; border-top:1px solid rgba(255,255,255,.06);">
+<p style="font-size:.8rem; line-height:1.5; color:#6f7680; text-align:center;">
+WRW is not affiliated with or endorsed by Strava. We recommend it for tracking, but you can use any app or device you wish that clearly shows your distance.
+</p>
+</div>
+</div>
+
+<!-- IMPORTANT INFO -->
+<div class="card">
+<div class="card-title">Important info</div>
+<div class="card-sub">A few key things to know before you begin.</div>
+
+<div class="info-list">
+<div class="info-item"><strong>You can split the run:</strong> complete your challenge over one or more sessions.</div>
+<div class="info-item"><strong>Proof is needed at the end:</strong> send your proof when the full challenge is complete.</div>
+<div class="info-item"><strong>Your medal follows completion:</strong> once your challenge is complete and proof is sent, we dispatch your medal.</div>
+<div class="info-item"><strong>Any tracker is fine:</strong> Strava is recommended, but any app or device that clearly shows your distance works.</div>
+</div>
 </div>
 
 <!-- INSTALL -->
@@ -388,9 +484,17 @@ Download Strava
 <a href="#" class="btn secondary">How to install</a>
 </div>
 </div>
-
 </div>
 
+<div class="help-line">
+Need help? <a href="mailto:Contact@walkrunwrestle.com">Contact@walkrunwrestle.com</a>
+</div>
+
+<div class="store-wrap">
+<a href="https://www.walkrunwrestle.com" class="btn secondary">Store</a>
+</div>
+
+<div class="trust">No accounts. No pressure. Just your run.</div>
 <footer>© WRW</footer>
 
 </div>
