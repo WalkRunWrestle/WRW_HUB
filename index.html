@@ -498,12 +498,12 @@ Need help? <a href="mailto:Contact@walkrunwrestle.com">Contact@walkrunwrestle.co
 </div>
 
 <div class="trust">No accounts. No pressure. Just your run.</div>
-<footer>© WRW</footer>
+<footer>&copy; WRW</footer>
 
 </div>
 
 <script>
-let deferredPrompt;
+let deferredPrompt = null;
 
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
@@ -517,7 +517,7 @@ function installApp() {
       deferredPrompt = null;
     });
   } else {
-    alert("To install: tap your browser menu and select 'Add to Home Screen'");
+    showInstallHelp();
   }
 }
 
@@ -526,7 +526,15 @@ function toggleInstall(){
 }
 
 function showInstallHelp(){
-  alert("To install WRW:\n\n1. Tap the 3 dots in your browser\n2. Tap 'Add to Home Screen'\n3. Confirm\n\nDone.");
+  alert("To install WRW:\n\nAndroid:\nTap the 3 dots in your browser → Add to Home screen\n\niPhone:\nTap Share → Add to Home Screen");
+}
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .then(() => console.log("Service Worker registered"))
+      .catch((err) => console.log("SW error:", err));
+  });
 }
 </script>
 
