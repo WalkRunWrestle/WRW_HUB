@@ -289,6 +289,14 @@ color:#fff;
 font-weight:800;
 }
 
+/* DOWNLOAD GRID */
+.download-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-top:16px;
+}
+
 /* INSTALL */
 .install-box{
 margin-top:16px;
@@ -362,6 +370,10 @@ max-width:65%;
 .card-title{
 font-size:1.5rem;
 }
+
+.download-grid{
+grid-template-columns:1fr;
+}
 }
 </style>
 </head>
@@ -378,8 +390,8 @@ font-size:1.5rem;
 </div>
 
 <div class="top-actions">
-<a href="#install-section" class="btn primary">Install App</a>
-<a href="#before-start" class="btn secondary">Start your challenge</a>
+<a href="#install-section" class="btn primary">WRW App</a>
+<a href="#before-start" class="btn secondary">New here? Click here</a>
 </div>
 
 <!-- CHALLENGES -->
@@ -450,13 +462,14 @@ font-size:1.5rem;
 <div class="step"><div class="step-num">4</div><div class="step-text">Send proof when complete</div></div>
 </div>
 
-<a href="https://play.google.com/store/apps/details?id=com.strava" class="btn primary" style="margin-top:16px;">
-Download Strava
-</a>
+<div class="download-grid">
+<a href="https://play.google.com/store/apps/details?id=com.strava" class="btn primary">Android</a>
+<a href="https://apps.apple.com/app/strava-run-ride-hike/id426826309" class="btn secondary">iPhone</a>
+</div>
 
 <div style="margin-top:16px; padding-top:12px; border-top:1px solid rgba(255,255,255,.06);">
 <p style="font-size:.8rem; line-height:1.5; color:#6f7680; text-align:center;">
-WRW is not affiliated with or endorsed by Strava. We recommend it for tracking, but you can use any app or device you wish that clearly shows your distance.
+WRW is not affiliated with or endorsed by Strava. You can use any app or device you wish that clearly shows your distance.
 </p>
 </div>
 </div>
@@ -498,7 +511,7 @@ Need help? <a href="mailto:Contact@walkrunwrestle.com">Contact@walkrunwrestle.co
 </div>
 
 <div class="trust">No accounts. No pressure. Just your run.</div>
-<footer>&copy; WRW</footer>
+<footer>© WRW</footer>
 
 </div>
 
