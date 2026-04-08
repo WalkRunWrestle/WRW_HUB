@@ -74,6 +74,9 @@ text-align:center;
 font-weight:900;
 text-decoration:none;
 color:#fff;
+border:none;
+font-size:1rem;
+cursor:pointer;
 }
 
 .primary{
@@ -480,8 +483,8 @@ WRW is not affiliated with or endorsed by Strava. We recommend it for tracking, 
 <button class="install-toggle" onclick="toggleInstall()">Download App</button>
 
 <div class="install-content">
-<a href="#" class="btn primary">Download WRW</a>
-<a href="#" class="btn secondary">How to install</a>
+<button class="btn primary" onclick="installApp()">Download WRW</button>
+<button class="btn secondary" onclick="showInstallHelp()">How to install</button>
 </div>
 </div>
 </div>
@@ -500,8 +503,30 @@ Need help? <a href="mailto:Contact@walkrunwrestle.com">Contact@walkrunwrestle.co
 </div>
 
 <script>
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+});
+
+function installApp() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(() => {
+      deferredPrompt = null;
+    });
+  } else {
+    alert("To install: tap your browser menu and select 'Add to Home Screen'");
+  }
+}
+
 function toggleInstall(){
-document.getElementById('installBox').classList.toggle('open');
+  document.getElementById('installBox').classList.toggle('open');
+}
+
+function showInstallHelp(){
+  alert("To install WRW:\n\n1. Tap the 3 dots in your browser\n2. Tap 'Add to Home Screen'\n3. Confirm\n\nDone.");
 }
 </script>
 
